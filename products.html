@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type = "text/jascript" src = "../scripts/jquery-1.6.1.min.js"></script>
+<script type = "text/jascript" src = "../scripts/ko/knockout-2.1.0.debug.js"></script>
+<script type = "text/jascript" src = "../scripts/objects/model/customer.js"></script>
+<script type = "text/jascript" src = "../scripts/objects/model.dataStore.js"></script>
+<script type = "text/jascript" src = "../scripts/objects.viewModel/productsViewModel.js"></script>
+<link type = "text/css" rel = "Stylesheet" href = "../Content/Metro/jquery.metro.css"/>
+<link rel = "stylesheet" href = "styles.css" />
+<script>
+$(document).ready(function(){
+//instantiate the ProductViewModel model and apply bindings
+var customersViewModel = new ProductViewModel();
+//base.DataContext = _viewModel;
+ko.apply Bindings(contomerViewModel);
+});
+</script>
+</head>
+<body marginwidth="100x" marginheight="100x" topmargin="100px" leftmargin="10000px" righrmargin="0" bottommargin="0" accent = "blue" theme = "dark">
+<h1 class = "accent-color">Products></h1>
+<div class"apptitle">
+<span class = "accent-color">MVVM</span> Plain HTML with knockout.js
+&nbsp;&nbsp;
+<span style = "font-size:30pt;">
+<a href = "products.html">&lsaquo;</a>
+<a href = "products_grid.html">&rsaquo;</a>
+</span>
+</div> 
+</br>
+<!-- Home section -->
+<div data-bind = "visible: currentContext() == 'home' ">
+<button data-bind = "click: viewAll"><a>View Products</a>
+</button>
+</br>
+</br>
+</br>
+</br>
+<h1>Product Management System</h1>
+</br>
+</br>
+</br>
+</div>
+<!-- View All Products section -->
+<div data-bind = "visible currentContext() == 'all' ">
+<button data-bind = "click: reset"> <a>Home</a>
+</button>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<div id="ListMenu">
+<!-- iterate through the customers property of the view model -->
+<ul data-bind="foreach: customers">
+<div>
+<img width = "100" heigh ="100" allign = "middle" style = "padding:5px" data-bind="attr: {src: pictureURL }"/></img>
+<a style="font-size: 15pt; cursor:pointer;color:#067EBF" data-bind = "text: fullName, click: $parent.setCurrentProduct"></a>
+</div>
+</ul>
+</div>
+</div>
+
+<!-- Cutomer Detail section-->
+<div data-bind = "visible:currentContext() == 'detail' ">
+<button data-bind = "click: viewAll"><a>Go Back</a>
+</button>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<img width ="200" heigh ="200" align="middle" style="padding: 5px" data-bind ="attr: {scr: currentProductPictureURL}"/></img>
+<h1 data-bind="text: currentProductFullName"></h1>
+</br>
+<h2 data-bind = "text:cuurentCusterEmailAddress"></h2>
+</div>
+</body>
+</html>
+
+
+
