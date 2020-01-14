@@ -7,16 +7,16 @@ function CustomerViewModel ()
 	self.currentContext=ko.observable("home");
 	
 	//the product in context is expose as separate fields
-	self.currentCustomerFullName = ko.observable("");
-	self.currentCustomerEmailAddress = ko.observable("");
-	self.currentCustomerPictureURL = ko.observable("");
+	self.currentProductName = ko.observable("");
+	self.currentProductDescription = ko.observable("");
+	self.currentProductPictureURL = ko.observable("");
 	
 	//Operations
 	self.loadCustomers = function()
 	{
 		self.products.removeAll();
 		var dataService = new productDataService();
-		var products = dataService.getCustomers();
+		var products = dataService.getProducts();
 		
 		for (var i=0 ; i< products.length ; i++)
 		{
