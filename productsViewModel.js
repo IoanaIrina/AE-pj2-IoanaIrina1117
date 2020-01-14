@@ -22,8 +22,8 @@ function ProductViewModel ()
 		{
 			var product = new Product(
 			products[i].id,
-			products[i].name,
-			products[i].desciption,
+			products[i].fullName,
+			products[i].description,
 			products[i].pictureURL);
 			
 			self.products.push(product);
