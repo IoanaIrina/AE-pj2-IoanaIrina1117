@@ -20,7 +20,7 @@ function CustomerViewModel ()
 		
 		for (var i=0 ; i< products.length ; i++)
 		{
-			var product = new Customer(
+			var product = new Product(
 			products[i].id,
 			products[i].Name,
 			products[i].desciption,
