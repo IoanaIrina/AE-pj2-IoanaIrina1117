@@ -12,7 +12,7 @@ function ProductViewModel ()
 	self.currentProductPictureURL = ko.observable("");
 	
 	//Operations
-	self.loadCustomers = function()
+	self.loadProducts = function()
 	{
 		self.products.removeAll();
 		var dataService = new productDataService();
