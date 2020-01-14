@@ -22,10 +22,8 @@ function CustomerViewModel ()
 		{
 			var product = new Customer(
 			products[i].id,
-			products[i].firstName,
-			products[i].lastName,
-			products[i].companyName,
-			products[i].emailAddress,
+			products[i].Name,
+			products[i].desciption,
 			products[i].pictureURL);
 			
 			self.products.push(product);
@@ -47,7 +45,7 @@ function CustomerViewModel ()
 		self.currentContext("detail");
 		self.currentProduct = this;
 		self.currentProductFullName(this.fullName());
-		self.currentProductEmailAddress(this.emailAddress());
+		self.currentProductEmailAddress(this.description());
 		self.currentProductPictureURL(this.pictureURL());
 	};
 	self.loadProducts();
