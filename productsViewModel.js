@@ -22,7 +22,7 @@ function ProductViewModel ()
 		{
 			var product = new Product(
 			products[i].id,
-			products[i].Name,
+			products[i].name,
 			products[i].desciption,
 			products[i].pictureURL);
 			
