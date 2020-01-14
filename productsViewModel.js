@@ -1,4 +1,4 @@
-function CustomerViewModel ()
+function ProductViewModel ()
 {
 	var self = this;
 	
