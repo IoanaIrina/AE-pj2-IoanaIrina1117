@@ -13,11 +13,11 @@ $(document).ready(function(){
 //instantiate the ProductViewModel model and apply bindings
 var customersViewModel = new ProductViewModel();
 //base.DataContext = _viewModel;
-ko.apply Bindings(contomerViewModel);
+ko.apply Bindings(productViewModel);
 });
 </script>
 </head>
-<body marginwidth="100x" marginheight="100x" topmargin="100px" leftmargin="10000px" righrmargin="0" bottommargin="0" accent = "blue" theme = "dark">
+<body marginwidth="100x" marginheight="100x" topmargin="100px" leftmargin="10000px" righrmargin="0" bottommargin="0" accent = "yellow" theme = "dark">
 <h1 class = "accent-color">Products></h1>
 <div class"apptitle">
 <span class = "accent-color">MVVM</span> Plain HTML with knockout.js
@@ -33,24 +33,13 @@ ko.apply Bindings(contomerViewModel);
 <button data-bind = "click: viewAll"><a>View Products</a>
 </button>
 </br>
-</br>
-</br>
-</br>
-<h1>Product Management System</h1>
-</br>
-</br>
+<h1>Product Catalog</h1>
 </br>
 </div>
 <!-- View All Products section -->
 <div data-bind = "visible currentContext() == 'all' ">
 <button data-bind = "click: reset"> <a>Home</a>
 </button>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
 </br>
 <div id="ListMenu">
 <!-- iterate through the customers property of the view model -->
@@ -62,17 +51,10 @@ ko.apply Bindings(contomerViewModel);
 </ul>
 </div>
 </div>
-
 <!-- Cutomer Detail section-->
 <div data-bind = "visible:currentContext() == 'detail' ">
 <button data-bind = "click: viewAll"><a>Go Back</a>
 </button>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
 </br>
 <img width ="200" heigh ="200" align="middle" style="padding: 5px" data-bind ="attr: {scr: currentProductPictureURL}"/></img>
 <h1 data-bind="text: currentProductFullName"></h1>
