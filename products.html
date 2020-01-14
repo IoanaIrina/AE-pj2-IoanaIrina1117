@@ -11,7 +11,7 @@
 <script>
 $(document).ready(function(){
 //instantiate the ProductViewModel model and apply bindings
-var customersViewModel = new ProductViewModel();
+var productViewModel = new ProductViewModel();
 //base.DataContext = _viewModel;
 ko.apply Bindings(productViewModel);
 });
@@ -43,7 +43,7 @@ ko.apply Bindings(productViewModel);
 </br>
 <div id="ListMenu">
 <!-- iterate through the customers property of the view model -->
-<ul data-bind="foreach: customers">
+<ul data-bind="foreach: products">
 <div>
 <img width = "100" heigh ="100" allign = "middle" style = "padding:5px" data-bind="attr: {src: pictureURL }"/></img>
 <a style="font-size: 15pt; cursor:pointer;color:#067EBF" data-bind = "text: fullName, click: $parent.setCurrentProduct"></a>
@@ -51,7 +51,7 @@ ko.apply Bindings(productViewModel);
 </ul>
 </div>
 </div>
-<!-- Cutomer Detail section-->
+<!-- Product Detail section-->
 <div data-bind = "visible:currentContext() == 'detail' ">
 <button data-bind = "click: viewAll"><a>Go Back</a>
 </button>
